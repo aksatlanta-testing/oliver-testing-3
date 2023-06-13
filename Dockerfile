@@ -1,5 +1,7 @@
 FROM golang:1.20 as builder
 
+# another change
+
 WORKDIR /go/src/github.com/Azure/aks-app-routing-operator
 ADD . .
 RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -v -a -ldflags '-extldflags "-static"' -o aks-app-routing-operator
